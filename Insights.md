@@ -14,14 +14,9 @@ The company wants to understand international sales performance, identify underp
 
 No fully duplicated rows were identified during the data quality check process.
 
-The Postal Code column contained 80% missing values. Instead of immediately removing the column, a missing-value indicator variable was created to investigate whether missing postal codes were associated with shipping performance. Shipping performance is measured by the days needed from placing an order to shipping, a new column [shippinf days] is created by subtracting Ship Date from Order Date.
+The Postal Code column contained 80% missing values. Instead of immediately removing the column, a missing-value indicator variable was created to investigate whether missing postal codes were associated with shipping performance. Shipping performance is measured by the days needed from placing an order to shipping, a new column [shipping_days] is created by subtracting Ship Date from Order Date.
 
 The analysis showed that the missing value ratio remained consistently around 80% across all shipping-day groups, suggesting that the presence or absence of postal codes was not associated with shipping duration.
-
-
-# Data Standardization
-
-Region labels such as "South" and "North" were standardized into more descriptive business labels ("South America" and "North America") during analysis, while preserving the original raw data.
 
 
 # Key Findings
