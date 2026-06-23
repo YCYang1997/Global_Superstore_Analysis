@@ -198,7 +198,7 @@ ORDER BY total_sales_k DESC
 /*
 CREATED BY: Gina Yang
 CREATE DATE: 2026/05/26
-DESCRIPTION: Cleaned dates view
+DESCRIPTION: Change date to YYYY-MM-DD format, create view "Cleaned_Dates"
 */
 
 CREATE VIEW Cleaned_Dates AS
@@ -272,26 +272,14 @@ GROUP BY Region
 	
 /*
 CREATED BY: Gina Yang
-CREATE DATE: 2026/05/26
-DESCRIPTION: Total sales by month
+CREATE DATE: 2026/06/23
+DESCRIPTION: Total sales and profit by month
 */
 
 SELECT
     strftime('%Y-%m', clean_order_date) AS order_month,
-    ROUND(SUM(sales) / 1000.0, 2) AS total_sales_k
-FROM Cleaned_Dates
-GROUP BY order_month
-ORDER BY order_month
-	
-/*
-CREATED BY: Gina Yang
-CREATE DATE: 2026/05/26
-DESCRIPTION: Total profit by month
-*/
-
-SELECT
-    strftime('%Y-%m', clean_order_date) AS order_month,
-    ROUND(SUM(profit) / 1000.0, 2) AS total_profit
+    ROUND(SUM(sales) / 1000.0, 2) AS total_sales_k,
+	ROUND(SUM(profit) / 1000.0, 2) AS total_profit
 FROM Cleaned_Dates
 GROUP BY order_month
 ORDER BY order_month
@@ -314,10 +302,13 @@ GROUP BY "product name"
 HAVING profit_margin < 0
 ORDER BY total_sales DESC;
 
-
 /*
 CREATED BY: Gina Yang
-CREATE DATE: 2026/05/27
-DESCRIPTION: Label profit margin category
+CREATE DATE: 2026/06/23
+DESCRIPTION: Count unique products
 */
 
+SELECT
+	COUNT(DISTINCT "Product Name") AS product_count
+FROM
+	Orders;
