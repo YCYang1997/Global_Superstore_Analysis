@@ -1,11 +1,23 @@
 /*
 CREATED BY: Gina Yang
+CREATE DATE: 2026/05/26
+DESCRIPTION: Check whether data is imported successfully
+*/
+
+SELECT
+	*
+FROM
+	Orders
+LIMIT 5;
+
+
+/*
+CREATED BY: Gina Yang
 CREATE DATE: 2026/05/27
 DESCRIPTION: Check duplicate entries
 */
 
 SELECT
-    *,
     COUNT(*) AS duplicate_count
 FROM orders
 GROUP BY
@@ -20,19 +32,6 @@ GROUP BY
     quantity,
 	"shipping cost"
 HAVING COUNT(*) > 1;
-
-	
-/*
-CREATED BY: Gina Yang
-CREATE DATE: 2026/05/26
-DESCRIPTION: Check whether data is imported successfully
-*/
-
-SELECT
-	*
-FROM
-	Orders
-LIMIT 5;
 
 
 /*
@@ -61,6 +60,18 @@ FROM
 	
 /*
 CREATED BY: Gina Yang
+CREATE DATE: 2026/06/21
+DESCRIPTION: Count number of customers
+*/
+
+SELECT
+	COUNT(DISTINCT "Customer ID") AS Customer_Count
+FROM
+	Orders;
+
+	
+/*
+CREATED BY: Gina Yang
 CREATE DATE: 2026/05/26
 DESCRIPTION: Sales, profit, profit margin by market
 */
@@ -69,7 +80,7 @@ SELECT
     Market,   
     ROUND(SUM(sales) / 1000.0, 2) || 'K' AS total_sales_k,
     ROUND(SUM(profit) / 1000.0, 2) || 'K' AS total_profit_k,
-	ROUND(SUM(profit) * 100.0 / SUM(sales), 2) || '%' AS profit_margin
+	ROUND(SUM(profit) * 100.0 / SUM(sales), 2)  AS "profit_margin_%"
 FROM orders
 GROUP BY Market
 ORDER BY SUM(sales) DESC
@@ -97,7 +108,7 @@ SELECT
     END AS margin_category
 FROM orders
 GROUP BY Country
-ORDER BY profit_margin DESC;
+ORDER BY Country;
 
 
 /*
@@ -110,7 +121,7 @@ SELECT
     Country AS [10 most profitable countries],   
     ROUND(SUM(sales) / 1000.0, 2) AS total_sales_k,
     ROUND(SUM(profit) / 1000.0, 2) AS total_profit_k,
-	ROUND(SUM(profit) * 100.0 / SUM(sales), 2) || '%'  AS profit_margin
+	ROUND(SUM(profit) * 100.0 / SUM(sales), 2)  AS "profit_margin_%"
 FROM orders
 GROUP BY Country
 ORDER BY total_profit_k DESC
@@ -127,7 +138,7 @@ SELECT
     City AS [10 most profitable countries],   
     ROUND(SUM(sales) / 1000.0, 2) AS total_sales_k,
     ROUND(SUM(profit) / 1000.0, 2) AS total_profit_k,
-	ROUND(SUM(profit) * 100.0 / SUM(sales), 2) || '%' AS profit_margin
+	ROUND(SUM(profit) * 100.0 / SUM(sales), 2) AS "profit_margin_%"
 FROM orders
 GROUP BY City
 ORDER BY total_profit_k DESC
