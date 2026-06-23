@@ -28,3 +28,5 @@ Total profit demonstrated an overall upward trend over time. However, a recurrin
 APAC was identified as the most profitable market followed by EU. The United States was identified as the most profitable country, while New York generated the highest profit among all cities. While Armenia has the highest profit margin followed by Mauritania, 29 countries showed negative profit margins despite generating sales revenue. In addition, 675 out of 3788 products showed negative profit margin, indicating potential pricing or operational inefficiencies.
 
 Technology is the most profitable category in terms of sales, profit, and profit margin. The profit margin of furniture is significantly lower than technology and office supplies products.
+
+The repeat purchase rate is 99.37%, suggesting exceptionally strong customer loyalty and a high likelihood of customers returning for future purchases.
