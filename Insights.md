@@ -30,3 +30,9 @@ APAC was identified as the most profitable market followed by EU. The United Sta
 Technology is the most profitable category in terms of sales, profit, and profit margin. The profit margin of furniture is significantly lower than technology and office supplies products.
 
 The repeat purchase rate is 99.37%, suggesting exceptionally strong customer loyalty and a high likelihood of customers returning for future purchases.
+
+Linear regression analysis revealed a significant negative relationship between discount and profit margin (β = -180.91, p < 0.001). The model explained approximately 72.6% of the variation in profit margin (R² = 0.726). The findings suggest that discount strategy is a major driver of profitability, with every 10% increase in discount associated with an approximately 18 percentage-point decline in profit margin.
+
+
+# Recommendations
+建議確認negative margin的品項是否折扣給太多。
