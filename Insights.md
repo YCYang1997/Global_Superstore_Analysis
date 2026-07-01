@@ -35,4 +35,4 @@ Linear regression analysis revealed a significant negative relationship between 
 
 
 # Recommendations
-建議確認negative margin的品項是否折扣給太多。
+Negative margin is highly associated with profit. Therefore, Therefore, I would recommend reviewing the items with negative profit margins and considering reducing the discounts offered on those products.
