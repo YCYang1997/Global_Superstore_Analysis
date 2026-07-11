@@ -4,6 +4,7 @@ Total sales across four years is 12.64 Million, while the total profit is 1.47 M
 
 ## Profit Analysis
 
+
 ## Sales and Profit Trend
 
 ## Top 10 products
